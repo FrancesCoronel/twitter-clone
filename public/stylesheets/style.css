@@ -17,7 +17,8 @@ body {
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
-  background-color: #f5f5f5;
+  /*background-color: #f5f5f5;*/
+  background-color: #6CADDE;
 }
 
 
@@ -56,4 +57,43 @@ code {
 }
 .content .by {
   font-weight: bold;
+}
+
+.text-muted {
+  color: white;
+}
+
+a {
+  color: #292F33;
+}
+
+/*.nimit li {
+  list-style-image: url('/images/nimit.jpeg');
+  list-style-image: url("/images/nimit2.png");
+}*/
+
+#default {
+  float: left;
+}
+
+#tweetbox {
+  border-bottom: 1px solid #292F33;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+#retweet {
+  font-size: 12px;
+}
+
+.navbar {
+  background-color: #6CADDE;
+}
+
+.fa fa-twitter {
+  color: white;
 }
