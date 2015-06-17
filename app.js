@@ -2,6 +2,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var swig = require('swig');
+var _ = require('underscore');
 
 //turning off Swig's caching
 swig.setDefaults({ cache: false });
@@ -18,9 +19,7 @@ app.set('views', __dirname + '/views');
 var server = app.listen(3000);
 
 app.use(morgan('dev'));
+app.use(express.static(__dirname + '/public'));
 
-// routing
-app.use('/', function(request, response) {
-	var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-	response.render( 'index', {title: 'Hall of Fame', people: people} );
-});
+var routes = require('./routes');
+app.use('/', routes);
