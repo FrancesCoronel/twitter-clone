@@ -17,8 +17,8 @@
   		{% for tweet in tweets %}
   		<div id="tweetbox">
   			<img src= "/images/nimit2.png" id="default">
-      		<ul><b>{{tweet.name}}</b></ul>
-        	<ul>{{tweet.text}}</ul>
+      		<ul><b><a href="/users/{{tweet.name}}">{{tweet.name}}</a></b></ul>
+        	<ul><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></ul>
         	<ul id="retweet"><a href="#"><i class="fa fa-refresh"></i> retweet</a></ul>
         </div>
 <!-- <li id="{{tweet.id}}"><img><a href="/users/{{tweet.name}}"><b>{{tweet.name}}</b></a><br>{{tweet.text}}<br><a>Re-Tweet</a></li> -->
