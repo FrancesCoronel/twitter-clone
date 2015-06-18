@@ -3,39 +3,38 @@
 {% block content %}
 
   <div class="page-header">
-    <h1>Welcome to Twitter.js, Nimit!</h1>
+    <h1>Welcome to Twitter.js, Mr. Moss</h1>
   </div>
   <div class="row">
     <div class="col-md-3">
-      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
-      <b>{{tweet.name}}</b><br>
-      100 followers
+      <img src="http://37.media.tumblr.com/2e4c7abbfd02ac5b90afe79ec2b42ee7/tumblr_n1809dGJqV1r73khmo9_400.jpg" height="250" width="250"><br>
+      <b><h2 class="followers"><a href="/">Maurice Moss</a></h2></b>
+      <h4 class="followers">100 followers</h4>
     </div>
 
     {% if showForm %}
 	  <form action="/submit" method="POST">
-	    <label for="name_field">Name </label>
-	    <input name="name" type="text" id="name_field" value="Nimit Maru" />
-
-	    <label for="text_field">What's on your mind? </label>
-	    <input name="text" type="text" id="text_field" style="width: 350px;" value="Fullstack Academy is awesome!"/>
-
-	    <input type="submit" value="Submit" />
+	    <label for="name_field">Name</label>
+      <input name="name" type="text" id="name_field" value="Maurice Moss" style="width: 125px;"/>
+      <br><br>
+	    <label for="text_field">What's on your mind?</label>
+	    <input name="text" type="text" id="text_field" style="width: 400px;" value="My name is Maurice Moss, my friends call me Moss."/>
+      <br><br>
+	    <input type="tweet" class="btn btn-default btn-sm" value="tweet" style="width: 75px;">
 	  </form>
 	{% endif %}
 
     <div class="col-md-9">
-	  <h3>All Tweets</h3>
+	  <h3><a href="/">All Tweets</a></h3>
       <!-- display tweets here -->
   		{% for tweet in tweets %}
-  		<div id="tweetbox">
-  			<img src= "/images/nimit2.png" id="default">
-      		<ul><b><a href="/users/{{tweet.name}}">{{tweet.name}}</a></b></ul>
-        	<ul><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></ul>
-        	<ul id="retweet"><a href="#"><i class="fa fa-refresh"></i> retweet</a></ul>
+    		<div id="tweetbox">
+    			<img src= "/images/nimit2.png" id="default">
+        		<ul><b><a href="/users/{{tweet.name}}">{{tweet.name}}</a></b></ul>
+          	<ul><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></ul>
+          	<ul id="retweet"><a href="#"><i class="fa fa-refresh"></i> retweet</a></ul>
         </div>
-<!-- <li id="{{tweet.id}}"><img><a href="/users/{{tweet.name}}"><b>{{tweet.name}}</b></a><br>{{tweet.text}}<br><a>Re-Tweet</a></li> -->
-        {% endfor %}
+      {% endfor %}
 	<br>
     </div>
   </div>
